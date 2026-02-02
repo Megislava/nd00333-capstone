@@ -39,10 +39,8 @@
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+Due to company policy restrictions, screen recording is not permitted in the working environment. As a result, a video recording of the project execution cannot be provided. Instead, the project’s functionality and workflow are demonstrated through detailed screenshots and comprehensive step-by-step explanations included throughout this README.
+
 
 ## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+To improve model accuracy performance, several approaches could be considered, including experimenting with additional feature engineering techniques or increasing the size of the training dataset. Deep learning was not enabled in this run in order to reduce execution time; however, it may be enabled in future runs to further explore potential performance gains.
