@@ -27,6 +27,8 @@ Model ranking:
 <img width="536" height="263" alt="image" src="https://github.com/user-attachments/assets/3c0e2bfb-2da7-44d5-8a20-3cbba7e805ae" />
 
 Best model deployment + enable logging:
+<img width="557" height="256" alt="image" src="https://github.com/user-attachments/assets/e60716f1-0199-476e-a0fa-d400b565e741" />
+
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
