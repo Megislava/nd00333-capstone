@@ -12,8 +12,21 @@
 ### Overview
 *TODO*: Explain about the data you are using and where you got it from.
 
+Heart Failure Dataset
+
+<img width="572" height="267" alt="image" src="https://github.com/user-attachments/assets/90b3c5ad-42a0-4ff2-89bd-f770b5e92420" />
+
+
 ### Task
 *TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+
+Job completed:
+<img width="536" height="268" alt="image" src="https://github.com/user-attachments/assets/0dbc086f-53bc-4612-b520-8978a17a9f37" />
+
+Model ranking:
+<img width="536" height="263" alt="image" src="https://github.com/user-attachments/assets/3c0e2bfb-2da7-44d5-8a20-3cbba7e805ae" />
+
+Best model deployment + enable logging:
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
