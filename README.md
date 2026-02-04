@@ -67,16 +67,9 @@ Model ranking:
 
 <img width="536" height="263" alt="image" src="https://github.com/user-attachments/assets/3c0e2bfb-2da7-44d5-8a20-3cbba7e805ae" />
 
-Best model deployment + enable logging:
+Best model deployment:
 
-<img width="557" height="256" alt="image" src="https://github.com/user-attachments/assets/e60716f1-0199-476e-a0fa-d400b565e741" />
-
-
-<img width="533" height="266" alt="image" src="https://github.com/user-attachments/assets/bde6eab8-13b2-4e2b-888d-d5ba88e0ccd9" />
-<img width="328" height="216" alt="image" src="https://github.com/user-attachments/assets/2528abc7-74c8-4bf0-8ee4-85c0a200d8e1" />
-<img width="531" height="252" alt="image" src="https://github.com/user-attachments/assets/53cd1808-1d97-42bd-be62-1f444fe47b82" />
-
-
+<img width="536" height="259" alt="image" src="https://github.com/user-attachments/assets/e64b0dc0-abd9-4669-941c-d4b7280d36d2" />
 
 ## Hyperparameter Tuning
 
@@ -103,6 +96,12 @@ The sweep used:
 - Multiple parallel child runs
 
 <img width="535" height="263" alt="image" src="https://github.com/user-attachments/assets/57b8ddb8-781c-4e67-bc8e-5459d3bb1855" />
+
+Best run: 
+
+<img width="530" height="248" alt="image" src="https://github.com/user-attachments/assets/506fdd43-04a3-433c-b82d-0abd127a6fa6" />
+<img width="542" height="257" alt="image" src="https://github.com/user-attachments/assets/5132f90d-ca76-44e5-87b1-a39676097942" />
+
 
 ### Results
 The hyperparameter sweep evaluated multiple configurations and identified the best-performing combination of parameters.
