@@ -1,44 +1,52 @@
-from sklearn.linear_model import LogisticRegression
 import argparse
+import glob
 import os
 import joblib
+import pandas as pd
+import mlflow
+
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-from azureml.core import Workspace, Dataset, Run
-import numpy as np
+from sklearn.metrics import accuracy_score, roc_auc_score
 
-def clean_data(data):
-
-    x_df = data.to_pandas_dataframe().dropna()
-    y_df = x_df.pop("DEATH_EVENT")
-
-    return x_df, y_df
+def find_csv(data_path: str) -> str:
+    csvs = glob.glob(os.path.join(data_path, "**", "*.csv"), recursive=True)
+    if not csvs:
+        raise FileNotFoundError(f"No CSV found under: {data_path}")
+    return csvs[0]
 
 def main():
-    # Add arguments to script
     parser = argparse.ArgumentParser()
-
-    parser.add_argument("--C", default=1.0, help="Inversion of regulation strength. Default 1.0")
-    parser.add_argument("--max_iter", type=int, default=100, help="Maximum iterations. Default 100")
-    
+    parser.add_argument("--training_data", type=str, required=True)
+    parser.add_argument("--label_col", type=str, default="DEATH_EVENT")
+    parser.add_argument("--C", type=float, default=1.0)
+    parser.add_argument("--max_iter", type=int, default=100)
     args = parser.parse_args()
 
-    run = Run.get_context()
+    csv_path = find_csv(args.training_data)
+    df = pd.read_csv(csv_path).dropna()
 
-    ws = run.experiment.workspace
-    dataset_name = "heart-failure-dataset"
-    ds = Dataset.get_by_name(ws, name=dataset_name)
+    y = df[args.label_col]
+    X = df.drop(columns=[args.label_col])
 
-    x, y = clean_data(ds) 
-    x_train, x_test, y_train, y_test = train_test_split(x, y)
+    x_train, x_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42, stratify=y
+    )
 
-    model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
+    model = LogisticRegression(C=args.C, max_iter=args.max_iter, solver="liblinear")
+    model.fit(x_train, y_train)
 
-    accuracy = model.score(x_test, y_test)
-    run.log("Accuracy", float(accuracy))
+    preds = model.predict(x_test)
+    acc = accuracy_score(y_test, preds)
+    mlflow.log_metric("accuracy", float(acc))
 
-    # save model
-    os.makedirs('outputs', exist_ok=True)
-    joblib.dump(model,'outputs/model')
+    if hasattr(model, "predict_proba"):
+        proba = model.predict_proba(x_test)[:, 1]
+        auc = roc_auc_score(y_test, proba)
+        mlflow.log_metric("auc", float(auc))
 
-if __name__ == '__main__':
+    os.makedirs("outputs", exist_ok=True)
+    joblib.dump(model, "outputs/model.pkl")
+
+if __name__ == "__main__":
     main()
