@@ -38,6 +38,7 @@ def main():
 
     preds = model.predict(x_test)
     acc = accuracy_score(y_test, preds)
+    print("tracking uri:", mlflow.get_tracking_uri())
     mlflow.log_metric("accuracy", float(acc))
 
     if hasattr(model, "predict_proba"):
