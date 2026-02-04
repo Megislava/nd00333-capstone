@@ -26,6 +26,7 @@ The target variable is:
 The dataset is relatively small, which makes it suitable for experimentation with Automated ML and classical machine learning models. It is accessible from Kaggle: https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data
 
 Heart Failure Dataset uploaded as MLTable:
+
 <img width="572" height="267" alt="image" src="https://github.com/user-attachments/assets/90b3c5ad-42a0-4ff2-89bd-f770b5e92420" />
 
 ### Task
@@ -59,12 +60,15 @@ The AutoML experiment trained multiple models and selected the best-performing m
 The best model achieved strong performance and was automatically packaged as an MLflow model.
 
 Job completed:
+
 <img width="536" height="268" alt="image" src="https://github.com/user-attachments/assets/0dbc086f-53bc-4612-b520-8978a17a9f37" />
 
 Model ranking:
+
 <img width="536" height="263" alt="image" src="https://github.com/user-attachments/assets/3c0e2bfb-2da7-44d5-8a20-3cbba7e805ae" />
 
 Best model deployment + enable logging:
+
 <img width="557" height="256" alt="image" src="https://github.com/user-attachments/assets/e60716f1-0199-476e-a0fa-d400b565e741" />
 
 
