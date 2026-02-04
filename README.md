@@ -35,6 +35,7 @@ Best model deployment + enable logging:
 <img width="531" height="252" alt="image" src="https://github.com/user-attachments/assets/53cd1808-1d97-42bd-be62-1f444fe47b82" />
 
 
+
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
 
@@ -57,6 +58,11 @@ Best model deployment + enable logging:
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+
+<img width="536" height="264" alt="image" src="https://github.com/user-attachments/assets/3b7837cb-bca2-4c94-9315-82b0db2036ea" />
+<img width="530" height="208" alt="image" src="https://github.com/user-attachments/assets/d971eb45-78d9-4f74-af62-bcfa7b13848a" />
+
+
 
 ## Screen Recording
 Due to company policy restrictions, screen recording is not permitted in the working environment. As a result, a video recording of the project execution cannot be provided. Instead, the project’s functionality and workflow are demonstrated through detailed screenshots and comprehensive step-by-step explanations included throughout this README.
